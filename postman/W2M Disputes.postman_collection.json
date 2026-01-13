@@ -338,6 +338,186 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "PAGINATION",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"pagination\": {\r\n    \"page\": 1,\r\n    \"collectionSize\": 10,\r\n    \"sortField\": \"id\",\r\n    \"sortOrder\": \"desc\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/supplier/filter",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"supplier",
+										"filter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Recategorize",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ids\": [\"001\", \"002\", \"003\"],\r\n    \"categoryId\": \"037\",\r\n    \"categoryDescription\": \"No reembolsable\"\r\n} ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/disputes/recategorize",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"disputes",
+										"recategorize"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Status",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ids\": [\"001\", \"002\", \"003\"],\n    \"dsapStateId\": \"REJECTED\",\n    \"dsapStateDescription\": \"Cerrado\"\n} ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/disputes/dsapstate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"disputes",
+										"dsapstate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Be-processing",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ids\": [\"001\", \"002\", \"003\"]\n} ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/disputes/be-processing",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"disputes",
+										"be-processing"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export excel",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"ids\": [\"004\", \"005\", \"015\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/disputes/export",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"disputes",
+										"export"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}
@@ -445,6 +625,48 @@
 								"v1",
 								"dispute-creation",
 								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PAGINATION",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"pagination\": {\n    \"page\": 1,\n    \"collectionSize\": 25,\n    \"sortField\": \"id\",\n    \"sortOrder\": \"desc\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/supplier/filter",
+							"protocol": "https",
+							"host": [
+								"tst-api",
+								"internal",
+								"w2m",
+								"com"
+							],
+							"path": [
+								"dispute",
+								"api",
+								"v1",
+								"supplier",
+								"filter"
 							]
 						}
 					},
