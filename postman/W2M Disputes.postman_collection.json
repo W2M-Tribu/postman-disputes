@@ -391,7 +391,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/v1/disputes/recategorize",
+									"raw": "http://localhost:8080/api/v1/lots/recategorize",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -400,7 +400,7 @@
 									"path": [
 										"api",
 										"v1",
-										"disputes",
+										"lots",
 										"recategorize"
 									]
 								}
@@ -430,7 +430,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/v1/disputes/dsapstate",
+									"raw": "http://localhost:8080/api/v1/lots/dsapstate",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -439,7 +439,7 @@
 									"path": [
 										"api",
 										"v1",
-										"disputes",
+										"lots",
 										"dsapstate"
 									]
 								}
@@ -469,7 +469,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/v1/disputes/be-processing",
+									"raw": "http://localhost:8080/api/v1/lots/be-processing",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -478,7 +478,7 @@
 									"path": [
 										"api",
 										"v1",
-										"disputes",
+										"lots",
 										"be-processing"
 									]
 								}
@@ -503,7 +503,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/v1/disputes/export",
+									"raw": "http://localhost:8080/api/v1/lots/export",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -512,7 +512,7 @@
 									"path": [
 										"api",
 										"v1",
-										"disputes",
+										"lots",
 										"export"
 									]
 								}
@@ -667,6 +667,174 @@
 								"v1",
 								"supplier",
 								"filter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Export Excel",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"ids\": [\"004\", \"005\", \"015\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/lots/export",
+							"protocol": "https",
+							"host": [
+								"tst-api",
+								"internal",
+								"w2m",
+								"com"
+							],
+							"path": [
+								"dispute",
+								"api",
+								"v1",
+								"lots",
+								"export"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Be-processing",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ids\": [\"001\", \"002\", \"003\"]\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/lots/be-processing",
+							"protocol": "https",
+							"host": [
+								"tst-api",
+								"internal",
+								"w2m",
+								"com"
+							],
+							"path": [
+								"dispute",
+								"api",
+								"v1",
+								"lots",
+								"be-processing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ids\": [\"001\", \"002\", \"003\"],\n    \"dsapStateId\": \"REJECTED\",\n    \"dsapStateDescription\": \"Cerrado\"\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/lots/dsapstate",
+							"protocol": "https",
+							"host": [
+								"tst-api",
+								"internal",
+								"w2m",
+								"com"
+							],
+							"path": [
+								"dispute",
+								"api",
+								"v1",
+								"lots",
+								"dsapstate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recategorize",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ids\": [\"001\", \"002\", \"003\"],\n    \"categoryId\": \"037\",\n    \"categoryDescription\": \"No reembolsable\"\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/lots/recategorize",
+							"protocol": "https",
+							"host": [
+								"tst-api",
+								"internal",
+								"w2m",
+								"com"
+							],
+							"path": [
+								"dispute",
+								"api",
+								"v1",
+								"lots",
+								"recategorize"
 							]
 						}
 					},
