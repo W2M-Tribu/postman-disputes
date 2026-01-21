@@ -391,7 +391,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/v1/lots/recategorize",
+									"raw": "http://localhost:8080/api/v1/disputes/recategorize",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -400,7 +400,7 @@
 									"path": [
 										"api",
 										"v1",
-										"lots",
+										"disputes",
 										"recategorize"
 									]
 								}
@@ -430,7 +430,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/v1/lots/dsapstate",
+									"raw": "http://localhost:8080/api/v1/disputes/dsapstate",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -439,7 +439,7 @@
 									"path": [
 										"api",
 										"v1",
-										"lots",
+										"disputes",
 										"dsapstate"
 									]
 								}
@@ -469,7 +469,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/v1/lots/be-processing",
+									"raw": "http://localhost:8080/api/v1/disputes/be-processing",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -478,7 +478,7 @@
 									"path": [
 										"api",
 										"v1",
-										"lots",
+										"disputes",
 										"be-processing"
 									]
 								}
@@ -503,7 +503,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/v1/lots/export",
+									"raw": "http://localhost:8080/api/v1/disputes/export",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -512,8 +512,136 @@
 									"path": [
 										"api",
 										"v1",
-										"lots",
+										"disputes",
 										"export"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List History",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/disputes/history/{{disputeId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"disputes",
+										"history",
+										"{{disputeId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Documents",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/disputes/documents/{{disputeId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"disputes",
+										"documents",
+										"{{disputeId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload Document",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"disputeId\": \"{{disputeId}}\",\n  \"fileName\": \"test.pdf\",\n  \"manager\": \"manager-1\",\n  \"fileType\": \"application/pdf\",\n  \"fileUrl\": \"http://example.com/file.pdf\",\n  \"fileContent\": \"JVBERi0xLjcKCjEgMCBvYmoKPDwvVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKPj4KZW5kb2JqCgoyIDAgb2JqCjw8L1R5cGUgL1BhZ2VzCi9LaWRzIFszIDAgUl0KL0NvdW50IDEKPj4KZW5kb2JqCgozIDAgb2JqCjw8L1R5cGUgL1BhZ2UKL1BhcmVudCAyIDAgUgovTWVkaWFCb3ggWzAgMCA1OTUgODQyXQovUmVzb3VyY2VzIDw8Ci9Gb250IDw8Ci9GMSA0IDAgUgo+Pgo+PgovQ29udGVudHMgNSAwIFIKPj4KZW5kb2JqCgo0IDAgb2JqCjw8L1R5cGUgL0ZvbnQKL1N1YnR5cGUgL1R5cGUxCi9CYXNlRm9udCAvSGVsdmV0aWNhCj4+CmVuZG9iagoKNSAwIG9iago8PC9MZW5ndGggNDQKPj4Kc3RyZWFtCkJUCjcwIDUwIFRECi9GMSAyNCBUZgooSGVsbG8gV29ybGQhKSBUagpFVAplbmRzdHJlYW0KZW5kb2JqCgp4cmVmCjAgNgowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMTAgMDAwMDAgbiAKMDAwMDAwMDA2MCAwMDAwMCBuIAowMDAwMDAwMTU3IDAwMDAwIG4gCjAwMDAwMDAzMDYgMDAwMDAgbiAKMDAwMDAwMDM5MyAwMDAwMCBuIAp0cmFpbGVyCjw8L1NpemUgNgovUm9vdCAxIDAgUgo+PgpzdGFydHhyZWYKNDg3CiUlRU9GCg==\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/disputes/documents",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"disputes",
+										"documents"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Download Document",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/disputes/document/{{documentId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"disputes",
+										"document",
+										"{{documentId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Document",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/disputes/document/{{documentId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"disputes",
+										"document",
+										"{{documentId}}"
 									]
 								}
 							},
@@ -667,174 +795,6 @@
 								"v1",
 								"supplier",
 								"filter"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Export Excel",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"ids\": [\"004\", \"005\", \"015\"]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/lots/export",
-							"protocol": "https",
-							"host": [
-								"tst-api",
-								"internal",
-								"w2m",
-								"com"
-							],
-							"path": [
-								"dispute",
-								"api",
-								"v1",
-								"lots",
-								"export"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Be-processing",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"ids\": [\"001\", \"002\", \"003\"]\n} ",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/lots/be-processing",
-							"protocol": "https",
-							"host": [
-								"tst-api",
-								"internal",
-								"w2m",
-								"com"
-							],
-							"path": [
-								"dispute",
-								"api",
-								"v1",
-								"lots",
-								"be-processing"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Status",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"ids\": [\"001\", \"002\", \"003\"],\n    \"dsapStateId\": \"REJECTED\",\n    \"dsapStateDescription\": \"Cerrado\"\n} ",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/lots/dsapstate",
-							"protocol": "https",
-							"host": [
-								"tst-api",
-								"internal",
-								"w2m",
-								"com"
-							],
-							"path": [
-								"dispute",
-								"api",
-								"v1",
-								"lots",
-								"dsapstate"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Recategorize",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"ids\": [\"001\", \"002\", \"003\"],\n    \"categoryId\": \"037\",\n    \"categoryDescription\": \"No reembolsable\"\n} ",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/lots/recategorize",
-							"protocol": "https",
-							"host": [
-								"tst-api",
-								"internal",
-								"w2m",
-								"com"
-							],
-							"path": [
-								"dispute",
-								"api",
-								"v1",
-								"lots",
-								"recategorize"
 							]
 						}
 					},
