@@ -1,1002 +1,1194 @@
 {
-	"info": {
-		"_postman_id": "08bdb378-2fce-4c71-bc6f-2046141d262d",
-		"name": "W2M Disputes",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "39902897"
-	},
-	"item": [
-		{
-			"name": "LOCAL",
-			"item": [
-				{
-					"name": "SnowflakeApi",
-					"item": [
-						{
-							"name": "snowflake - endpoint",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSU0RIQjRTMHRJMnRjU092MkFwRmpMb0pzN0dhdUlBWm9HQnROU0ZyTTlzIn0.eyJleHAiOjE3NTMzNDc2NjgsImlhdCI6MTc1MzM0NzM2OCwianRpIjoiZDM3ZTFjMjktMzY4NC00NmVjLWI3NDgtMTlhNGM1OGFmNmQ2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MTgxL3JlYWxtcy93Mm0tZGlzcHV0ZXMiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZGJkOTU4YWYtNWNhYy00YmFlLWE1NTktY2VmYTVkNmQ4N2JmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZWRnZS1zZXJ2aWNlIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtdzJtLWRpc3B1dGVzIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRIb3N0IjoiMTcyLjIwLjAuMSIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1lZGdlLXNlcnZpY2UiLCJjbGllbnRBZGRyZXNzIjoiMTcyLjIwLjAuMSIsImNsaWVudF9pZCI6ImVkZ2Utc2VydmljZSJ9.RruTtYaq-eF2VO2wWPwSEn7irObarXr4VsPcrNuWnmgNCvDT90v-J-vY9NrrexfpZtta4hStWnA7M7zLzCe8hKGyMOGZkXW9yX4NOa4iUGNv5jDz-MWQwTcWVlrRb0vo7y99_UHG3u8C8LhYXmbNeuLpX8FB94D3lRcl81ZdclrkiZIxx25XKsAK6XwH1kGn0jP4iCQ6zgZarRmLO3Fn7nJmkweYiIg0-yExIAQODNHlVslAayHWY3vKYFpKop7GTJOt6ly_QnKXtVIGahi5zeOQWBfi2HSzAklkL0SJinN-ioOsXSrHNSgh2fgJqQyTlJing1dBto2qdk3a4RAD0Q",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8081/test-snowflake",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8081",
-									"path": [
-										"test-snowflake"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Disputes",
-					"item": [
-						{
-							"name": "w2m-disputes-service",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8080/api/v1/dispute/123",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"v1",
-										"dispute",
-										"123"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "CREATE CORRECT",
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "data",
-											"value": "{\n  \"bp\": \"900017561\",\n  \"emails\": [\n    \"valid@example.com\",\n    \"fjcuenase@gmail.com\"\n  ]\n}",
-											"contentType": "application/json",
-											"type": "text"
-										},
-										{
-											"key": "file",
-											"type": "file",
-											"src": "/C:/Users/dgp8/Downloads/Michellee/correct.xlsx"
-										}
-									]
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/v1/dispute-creation/create",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"v1",
-										"dispute-creation",
-										"create"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "CREATE INCORRECT EMPTY",
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "data",
-											"value": "{\"emails\":[\"valid@example.com\",\"fjcuenase@gmail.com\"]}",
-											"contentType": "application/json",
-											"type": "text"
-										},
-										{
-											"key": "file",
-											"type": "file",
-											"src": "/C:/Users/FranciscoJavierCuena/Plexus Tech/Plexus W2M Gestión de disputas - Documentos/[continuous_evolution]/continuous_execution/continuous_integration/develop/postman-tests/alta/incorrect - empty.xlsx"
-										}
-									]
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/v1/dispute-creation/create",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"v1",
-										"dispute-creation",
-										"create"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "BP KNOWN",
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "sec-ch-ua-platform",
-										"value": "\"Windows\""
-									},
-									{
-										"key": "Referer",
-										"value": "https://disputes.tst.internal.w2m.com/"
-									},
-									{
-										"key": "User-Agent",
-										"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json, text/plain, */*"
-									},
-									{
-										"key": "sec-ch-ua",
-										"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "sec-ch-ua-mobile",
-										"value": "?0"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\"bp\":\"900017562\"}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8090/api/v1/bp-manager/check",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8090",
-									"path": [
-										"api",
-										"v1",
-										"bp-manager",
-										"check"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "BP UNKNOWN",
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "sec-ch-ua-platform",
-										"value": "\"Windows\""
-									},
-									{
-										"key": "Referer",
-										"value": "https://disputes.tst.internal.w2m.com/"
-									},
-									{
-										"key": "User-Agent",
-										"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json, text/plain, */*"
-									},
-									{
-										"key": "sec-ch-ua",
-										"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "sec-ch-ua-mobile",
-										"value": "?0"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\"bp\":\"67\"}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/v1/bp-manager/check",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"v1",
-										"bp-manager",
-										"check"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "BP ERROR",
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "sec-ch-ua-platform",
-										"value": "\"Windows\""
-									},
-									{
-										"key": "Referer",
-										"value": "https://disputes.tst.internal.w2m.com/"
-									},
-									{
-										"key": "User-Agent",
-										"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json, text/plain, */*"
-									},
-									{
-										"key": "sec-ch-ua",
-										"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "sec-ch-ua-mobile",
-										"value": "?0"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\"bp\":\"fail\"}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/v1/bp-manager/check",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"v1",
-										"bp-manager",
-										"check"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "PAGINATION",
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"pagination\": {\r\n    \"page\": 1,\r\n    \"collectionSize\": 10,\r\n    \"sortField\": \"id\",\r\n    \"sortOrder\": \"desc\"\r\n  }\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/v1/supplier/filter",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"v1",
-										"supplier",
-										"filter"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Recategorize",
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"ids\": [\"001\", \"002\", \"003\"],\r\n    \"categoryId\": \"037\",\r\n    \"categoryDescription\": \"No reembolsable\"\r\n} ",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/v1/disputes/recategorize",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"v1",
-										"disputes",
-										"recategorize"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Status",
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"ids\": [\"001\", \"002\", \"003\"],\n    \"dsapStateId\": \"REJECTED\",\n    \"dsapStateDescription\": \"Cerrado\"\n} ",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/v1/disputes/dsapstate",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"v1",
-										"disputes",
-										"dsapstate"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Be-processing",
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"ids\": [\"001\", \"002\", \"003\"]\n} ",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/v1/disputes/be-processing",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"v1",
-										"disputes",
-										"be-processing"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Export excel",
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"ids\": [\"004\", \"005\", \"015\"]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/v1/disputes/export",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"v1",
-										"disputes",
-										"export"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "List History",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8080/api/v1/disputes/history/{{disputeId}}",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"v1",
-										"disputes",
-										"history",
-										"{{disputeId}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "List Documents",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8080/api/v1/disputes/documents/{{disputeId}}",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"v1",
-										"disputes",
-										"documents",
-										"{{disputeId}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Upload Document",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"disputeId\": \"{{disputeId}}\",\n  \"fileName\": \"test.pdf\",\n  \"manager\": \"manager-1\",\n  \"fileType\": \"application/pdf\",\n  \"fileUrl\": \"http://example.com/file.pdf\",\n  \"fileContent\": \"JVBERi0xLjcKCjEgMCBvYmoKPDwvVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKPj4KZW5kb2JqCgoyIDAgb2JqCjw8L1R5cGUgL1BhZ2VzCi9LaWRzIFszIDAgUl0KL0NvdW50IDEKPj4KZW5kb2JqCgozIDAgb2JqCjw8L1R5cGUgL1BhZ2UKL1BhcmVudCAyIDAgUgovTWVkaWFCb3ggWzAgMCA1OTUgODQyXQovUmVzb3VyY2VzIDw8Ci9Gb250IDw8Ci9GMSA0IDAgUgo+Pgo+PgovQ29udGVudHMgNSAwIFIKPj4KZW5kb2JqCgo0IDAgb2JqCjw8L1R5cGUgL0ZvbnQKL1N1YnR5cGUgL1R5cGUxCi9CYXNlRm9udCAvSGVsdmV0aWNhCj4+CmVuZG9iagoKNSAwIG9iago8PC9MZW5ndGggNDQKPj4Kc3RyZWFtCkJUCjcwIDUwIFRECi9GMSAyNCBUZgooSGVsbG8gV29ybGQhKSBUagpFVAplbmRzdHJlYW0KZW5kb2JqCgp4cmVmCjAgNgowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMTAgMDAwMDAgbiAKMDAwMDAwMDA2MCAwMDAwMCBuIAowMDAwMDAwMTU3IDAwMDAwIG4gCjAwMDAwMDAzMDYgMDAwMDAgbiAKMDAwMDAwMDM5MyAwMDAwMCBuIAp0cmFpbGVyCjw8L1NpemUgNgovUm9vdCAxIDAgUgo+PgpzdGFydHhyZWYKNDg3CiUlRU9GCg==\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/v1/disputes/documents",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"v1",
-										"disputes",
-										"documents"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Download Document",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8080/api/v1/disputes/document/{{documentId}}",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"v1",
-										"disputes",
-										"document",
-										"{{documentId}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Delete Document",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8080/api/v1/disputes/document/{{documentId}}",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"v1",
-										"disputes",
-										"document",
-										"{{documentId}}"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "TST",
-			"item": [
-				{
-					"name": "TST-BP",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "sec-ch-ua-platform",
-								"value": "\"Windows\""
-							},
-							{
-								"key": "Referer",
-								"value": "https://disputes.tst.internal.w2m.com/"
-							},
-							{
-								"key": "User-Agent",
-								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json, text/plain, */*"
-							},
-							{
-								"key": "sec-ch-ua",
-								"value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "sec-ch-ua-mobile",
-								"value": "?0"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\"bp\":\"67\"}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/bp-manager/check",
-							"protocol": "https",
-							"host": [
-								"tst-api",
-								"internal",
-								"w2m",
-								"com"
-							],
-							"path": [
-								"dispute",
-								"api",
-								"v1",
-								"bp-manager",
-								"check"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "TST-CREATE",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "data",
-									"value": "{\"emails\":[\"valid@example.com\",\"fjcuenase@gmail.com\"]}",
-									"contentType": "application/json",
-									"type": "text"
-								},
-								{
-									"key": "file",
-									"type": "file",
-									"src": "/C:/Users/dgp8/Desktop/incorrecto.xlsx"
-								}
-							]
-						},
-						"url": {
-							"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/dispute-creation/create",
-							"protocol": "https",
-							"host": [
-								"tst-api",
-								"internal",
-								"w2m",
-								"com"
-							],
-							"path": [
-								"dispute",
-								"api",
-								"v1",
-								"dispute-creation",
-								"create"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "PAGINATION",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"pagination\": {\n    \"page\": 1,\n    \"collectionSize\": 25,\n    \"sortField\": \"id\",\n    \"sortOrder\": \"desc\"\n  }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://tst-api.internal.w2m.com/dispute/api/v1/supplier/filter",
-							"protocol": "https",
-							"host": [
-								"tst-api",
-								"internal",
-								"w2m",
-								"com"
-							],
-							"path": [
-								"dispute",
-								"api",
-								"v1",
-								"supplier",
-								"filter"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "MOCKSERVER",
-			"item": [
-				{
-					"name": "SAP",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://mockserver.internal.w2m.com/disputes/sap/api/v1/status",
-							"protocol": "https",
-							"host": [
-								"mockserver",
-								"internal",
-								"w2m",
-								"com"
-							],
-							"path": [
-								"disputes",
-								"sap",
-								"api",
-								"v1",
-								"status"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "IA",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://mockserver.internal.w2m.com/disputes/ia/api/v1/category",
-							"protocol": "https",
-							"host": [
-								"mockserver",
-								"internal",
-								"w2m",
-								"com"
-							],
-							"path": [
-								"disputes",
-								"ia",
-								"api",
-								"v1",
-								"category"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Snowflake - Consulta válida",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\"statement\": \"SELECT * FROM usuarios\"}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://mockserver.internal.w2m.com/disputes/snowflake/api/v2/statements",
-							"protocol": "https",
-							"host": [
-								"mockserver",
-								"internal",
-								"w2m",
-								"com"
-							],
-							"path": [
-								"disputes",
-								"snowflake",
-								"api",
-								"v2",
-								"statements"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "LOGIN",
-			"item": [
-				{
-					"name": "Login Disputes",
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "username",
-									"value": "team-finance",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "6FONUFUFLbhFiBUkUC7X2mYK7mWbX0Ab",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "grant_type",
-									"value": "client_credentials",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "https://pre-auth.w2m.com/auth/realms/integration/protocol/openid-connect/token",
-							"protocol": "https",
-							"host": [
-								"pre-auth",
-								"w2m",
-								"com"
-							],
-							"path": [
-								"auth",
-								"realms",
-								"integration",
-								"protocol",
-								"openid-connect",
-								"token"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Login Snowflake",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							},
-							{
-								"key": "Authorization",
-								"value": "Basic ZmJlZTkwNzQtZTVmZi00NzU0LWI2MjYtZDJhMDdiYTJhNzQ4OkdCcDhRfkJ3U0tfUGM0R2tZN1Q1blBPbjJPaWFIREliVnMxLVJiaUs="
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "grant_type",
-									"value": "client_credentials",
-									"type": "text"
-								},
-								{
-									"key": "scope",
-									"value": "https://graph.microsoft.com/.default",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "https://login.microsoftonline.com/a55c9a68-e1ec-45a2-ad14-ee22e0eeccc1/oauth2/v2.0/token",
-							"protocol": "https",
-							"host": [
-								"login",
-								"microsoftonline",
-								"com"
-							],
-							"path": [
-								"a55c9a68-e1ec-45a2-ad14-ee22e0eeccc1",
-								"oauth2",
-								"v2.0",
-								"token"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		}
-	]
+  "info": {
+    "_postman_id": "52f4a0f5-2eef-4199-aaf1-2943925f4511",
+    "name": "W2M Disputes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39902897"
+  },
+  "item": [
+    {
+      "name": "LOCAL",
+      "item": [
+        {
+          "name": "SnowflakeApi",
+          "item": [
+            {
+              "name": "snowflake - endpoint",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSU0RIQjRTMHRJMnRjU092MkFwRmpMb0pzN0dhdUlBWm9HQnROU0ZyTTlzIn0.eyJleHAiOjE3NTMzNDc2NjgsImlhdCI6MTc1MzM0NzM2OCwianRpIjoiZDM3ZTFjMjktMzY4NC00NmVjLWI3NDgtMTlhNGM1OGFmNmQ2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MTgxL3JlYWxtcy93Mm0tZGlzcHV0ZXMiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZGJkOTU4YWYtNWNhYy00YmFlLWE1NTktY2VmYTVkNmQ4N2JmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZWRnZS1zZXJ2aWNlIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtdzJtLWRpc3B1dGVzIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJjbGllbnRIb3N0IjoiMTcyLjIwLjAuMSIsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1lZGdlLXNlcnZpY2UiLCJjbGllbnRBZGRyZXNzIjoiMTcyLjIwLjAuMSIsImNsaWVudF9pZCI6ImVkZ2Utc2VydmljZSJ9.RruTtYaq-eF2VO2wWPwSEn7irObarXr4VsPcrNuWnmgNCvDT90v-J-vY9NrrexfpZtta4hStWnA7M7zLzCe8hKGyMOGZkXW9yX4NOa4iUGNv5jDz-MWQwTcWVlrRb0vo7y99_UHG3u8C8LhYXmbNeuLpX8FB94D3lRcl81ZdclrkiZIxx25XKsAK6XwH1kGn0jP4iCQ6zgZarRmLO3Fn7nJmkweYiIg0-yExIAQODNHlVslAayHWY3vKYFpKop7GTJOt6ly_QnKXtVIGahi5zeOQWBfi2HSzAklkL0SJinN-ioOsXSrHNSgh2fgJqQyTlJing1dBto2qdk3a4RAD0Q",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8081/test-snowflake",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8081",
+                  "path": [
+                    "test-snowflake"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Disputes",
+          "item": [
+            {
+              "name": "w2m-disputes-service",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/dispute/123",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "dispute",
+                    "123"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "CREATE CORRECT",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "data",
+                      "value": "{\n  \"bp\": \"900017561\",\n  \"emails\": [\n    \"valid@example.com\",\n    \"fjcuenase@gmail.com\"\n  ]\n}",
+                      "contentType": "application/json",
+                      "type": "text"
+                    },
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "src": "/C:/Users/dgp8/Downloads/Michellee/correct.xlsx"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/dispute-creation/create",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "dispute-creation",
+                    "create"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "CREATE INCORRECT EMPTY",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "data",
+                      "value": "{\"emails\":[\"valid@example.com\",\"fjcuenase@gmail.com\"]}",
+                      "contentType": "application/json",
+                      "type": "text"
+                    },
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "src": "/C:/Users/FranciscoJavierCuena/Plexus Tech/Plexus W2M Gestión de disputas - Documentos/[continuous_evolution]/continuous_execution/continuous_integration/develop/postman-tests/alta/incorrect - empty.xlsx"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/dispute-creation/create",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "dispute-creation",
+                    "create"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "BP KNOWN",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "sec-ch-ua-platform",
+                    "value": "\"Windows\""
+                  },
+                  {
+                    "key": "Referer",
+                    "value": "https://disputes.tst.internal.w2m.com/"
+                  },
+                  {
+                    "key": "User-Agent",
+                    "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json, text/plain, */*"
+                  },
+                  {
+                    "key": "sec-ch-ua",
+                    "value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "sec-ch-ua-mobile",
+                    "value": "?0"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"bp\":\"900017562\"}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8090/api/v1/bp-manager/check",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8090",
+                  "path": [
+                    "api",
+                    "v1",
+                    "bp-manager",
+                    "check"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "BP UNKNOWN",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "sec-ch-ua-platform",
+                    "value": "\"Windows\""
+                  },
+                  {
+                    "key": "Referer",
+                    "value": "https://disputes.tst.internal.w2m.com/"
+                  },
+                  {
+                    "key": "User-Agent",
+                    "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json, text/plain, */*"
+                  },
+                  {
+                    "key": "sec-ch-ua",
+                    "value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "sec-ch-ua-mobile",
+                    "value": "?0"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"bp\":\"67\"}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/bp-manager/check",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "bp-manager",
+                    "check"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "BP ERROR",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "sec-ch-ua-platform",
+                    "value": "\"Windows\""
+                  },
+                  {
+                    "key": "Referer",
+                    "value": "https://disputes.tst.internal.w2m.com/"
+                  },
+                  {
+                    "key": "User-Agent",
+                    "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json, text/plain, */*"
+                  },
+                  {
+                    "key": "sec-ch-ua",
+                    "value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "sec-ch-ua-mobile",
+                    "value": "?0"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"bp\":\"fail\"}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/bp-manager/check",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "bp-manager",
+                    "check"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "PAGINATION",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"pagination\": {\r\n    \"page\": 1,\r\n    \"collectionSize\": 10,\r\n    \"sortField\": \"id\",\r\n    \"sortOrder\": \"desc\"\r\n  }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/supplier/filter",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "supplier",
+                    "filter"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Recategorize",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"ids\": [\"001\", \"002\", \"003\"],\r\n    \"categoryId\": \"037\",\r\n    \"categoryDescription\": \"No reembolsable\"\r\n} ",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/lots/recategorize",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "lots",
+                    "recategorize"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Status",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"ids\": [\"001\", \"002\", \"003\"],\n    \"dsapStateId\": \"REJECTED\",\n    \"dsapStateDescription\": \"Cerrado\"\n} ",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/disputes/dsapstate",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "disputes",
+                    "dsapstate"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Be-processing",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"ids\": [\"001\", \"002\", \"003\"]\n} ",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/disputes/be-processing",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "disputes",
+                    "be-processing"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Export excel",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"ids\": [\"004\", \"005\", \"015\"]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/disputes/export",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "disputes",
+                    "export"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "List History",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/history/{{disputeId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "history",
+                    "{{disputeId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "List Documents",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/document/{{disputeId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "document",
+                    "{{disputeId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Upload Document",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"disputeId\": \"{{disputeId}}\",\n  \"fileName\": \"test.pdf\",\n  \"manager\": \"manager-1\",\n  \"fileType\": \"application/pdf\",\n  \"fileUrl\": \"http://example.com/file.pdf\",\n  \"fileContent\": \"JVBERi0xLjcKCjEgMCBvYmoKPDwvVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKPj4KZW5kb2JqCgoyIDAgb2JqCjw8L1R5cGUgL1BhZ2VzCi9LaWRzIFszIDAgUl0KL0NvdW50IDEKPj4KZW5kb2JqCgozIDAgb2JqCjw8L1R5cGUgL1BhZ2UKL1BhcmVudCAyIDAgUgovTWVkaWFCb3ggWzAgMCA1OTUgODQyXQovUmVzb3VyY2VzIDw8Ci9Gb250IDw8Ci9GMSA0IDAgUgo+Pgo+PgovQ29udGVudHMgNSAwIFIKPj4KZW5kb2JqCgo0IDAgb2JqCjw8L1R5cGUgL0ZvbnQKL1N1YnR5cGUgL1R5cGUxCi9CYXNlRm9udCAvSGVsdmV0aWNhCj4+CmVuZG9iagoKNSAwIG9iago8PC9MZW5ndGggNDQKPj4Kc3RyZWFtCkJUCjcwIDUwIFRECi9GMSAyNCBUZgooSGVsbG8gV29ybGQhKSBUagpFVAplbmRzdHJlYW0KZW5kb2JqCgp4cmVmCjAgNgowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMTAgMDAwMDAgbiAKMDAwMDAwMDA2MCAwMDAwMCBuIAowMDAwMDAwMTU3IDAwMDAwIG4gCjAwMDAwMDAzMDYgMDAwMDAgbiAKMDAwMDAwMDM5MyAwMDAwMCBuIAp0cmFpbGVyCjw8L1NpemUgNgovUm9vdCAxIDAgUgo+PgpzdGFydHhyZWYKNDg3CiUlRU9GCg==\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/document/upload",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "document",
+                    "upload"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Download Document",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/document/{{documentId}}/download",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "document",
+                    "{{documentId}}",
+                    "download"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete Document",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/document/{{documentId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "document",
+                    "{{documentId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Open Document",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/v1/document/{{documentId}}/open",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "v1",
+                    "document",
+                    "{{documentId}}",
+                    "open"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TST",
+      "item": [
+        {
+          "name": "TST-BP",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "sec-ch-ua-platform",
+                "value": "\"Windows\""
+              },
+              {
+                "key": "Referer",
+                "value": "https://disputes.tst.internal.w2m.com/"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*"
+              },
+              {
+                "key": "sec-ch-ua",
+                "value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "sec-ch-ua-mobile",
+                "value": "?0"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"bp\":\"67\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/bp-manager/check",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "bp-manager",
+                "check"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "TST-CREATE",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "data",
+                  "value": "{\"emails\":[\"valid@example.com\",\"fjcuenase@gmail.com\"]}",
+                  "contentType": "application/json",
+                  "type": "text"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/C:/Users/dgp8/Desktop/incorrecto.xlsx"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/dispute-creation/create",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "dispute-creation",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PAGINATION",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pagination\": {\n    \"page\": 1,\n    \"collectionSize\": 25,\n    \"sortField\": \"id\",\n    \"sortOrder\": \"desc\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/supplier/filter",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "supplier",
+                "filter"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List History",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/history/{{disputeId}}",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "history",
+                "{{disputeId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Documents",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/document/{{disputeId}}",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "document",
+                "{{disputeId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Upload Document",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"disputeId\": \"{{disputeId}}\",\n  \"fileName\": \"test.pdf\",\n  \"manager\": \"manager-1\",\n  \"fileType\": \"application/pdf\",\n  \"fileUrl\": \"http://example.com/file.pdf\",\n  \"fileContent\": \"JVBERi0xLjcKCjEgMCBvYmoKPDwvVHlwZSAvQ2F0YWxvZwovUGFnZXMgMiAwIFIKPj4KZW5kb2JqCgoyIDAgb2JqCjw8L1R5cGUgL1BhZ2VzCi9LaWRzIFszIDAgUl0KL0NvdW50IDEKPj4KZW5kb2JqCgozIDAgb2JqCjw8L1R5cGUgL1BhZ2UKL1BhcmVudCAyIDAgUgovTWVkaWFCb3ggWzAgMCA1OTUgODQyXQovUmVzb3VyY2VzIDw8Ci9Gb250IDw8Ci9GMSA0IDAgUgo+Pgo+PgovQ29udGVudHMgNSAwIFIKPj4KZW5kb2JqCgo0IDAgb2JqCjw8L1R5cGUgL0ZvbnQKL1N1YnR5cGUgL1R5cGUxCi9CYXNlRm9udCAvSGVsdmV0aWNhCj4+CmVuZG9iagoKNSAwIG9iago8PC9MZW5ndGggNDQKPj4Kc3RyZWFtCkJUCjcwIDUwIFRECi9GMSAyNCBUZgooSGVsbG8gV29ybGQhKSBUagpFVAplbmRzdHJlYW0KZW5kb2JqCgp4cmVmCjAgNgowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMTAgMDAwMDAgbiAKMDAwMDAwMDA2MCAwMDAwMCBuIAowMDAwMDAwMTU3IDAwMDAwIG4gCjAwMDAwMDAzMDYgMDAwMDAgbiAKMDAwMDAwMDM5MyAwMDAwMCBuIAp0cmFpbGVyCjw8L1NpemUgNgovUm9vdCAxIDAgUgo+PgpzdGFydHhyZWYKNDg3CiUlRU9GCg==\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/document/upload",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "document",
+                "upload"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Download Document",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/document/{{documentId}}/download",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "document",
+                "{{documentId}}",
+                "download"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Document",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/document/{{documentId}}",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "document",
+                "{{documentId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Open Document",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://tst-api.internal.w2m.com/dispute/api/v1/document/{{documentId}}/open",
+              "protocol": "https",
+              "host": [
+                "tst-api",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "dispute",
+                "api",
+                "v1",
+                "document",
+                "{{documentId}}",
+                "open"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "MOCKSERVER",
+      "item": [
+        {
+          "name": "SAP",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://mockserver.internal.w2m.com/disputes/sap/api/v1/status",
+              "protocol": "https",
+              "host": [
+                "mockserver",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "disputes",
+                "sap",
+                "api",
+                "v1",
+                "status"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "IA",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://mockserver.internal.w2m.com/disputes/ia/api/v1/category",
+              "protocol": "https",
+              "host": [
+                "mockserver",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "disputes",
+                "ia",
+                "api",
+                "v1",
+                "category"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Snowflake - Consulta válida",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"statement\": \"SELECT * FROM usuarios\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://mockserver.internal.w2m.com/disputes/snowflake/api/v2/statements",
+              "protocol": "https",
+              "host": [
+                "mockserver",
+                "internal",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "disputes",
+                "snowflake",
+                "api",
+                "v2",
+                "statements"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "LOGIN",
+      "item": [
+        {
+          "name": "Login Disputes",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "team-finance",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "6FONUFUFLbhFiBUkUC7X2mYK7mWbX0Ab",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://pre-auth.w2m.com/auth/realms/integration/protocol/openid-connect/token",
+              "protocol": "https",
+              "host": [
+                "pre-auth",
+                "w2m",
+                "com"
+              ],
+              "path": [
+                "auth",
+                "realms",
+                "integration",
+                "protocol",
+                "openid-connect",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login Snowflake",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic ZmJlZTkwNzQtZTVmZi00NzU0LWI2MjYtZDJhMDdiYTJhNzQ4OkdCcDhRfkJ3U0tfUGM0R2tZN1Q1blBPbjJPaWFIREliVnMxLVJiaUs="
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "https://graph.microsoft.com/.default",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://login.microsoftonline.com/a55c9a68-e1ec-45a2-ad14-ee22e0eeccc1/oauth2/v2.0/token",
+              "protocol": "https",
+              "host": [
+                "login",
+                "microsoftonline",
+                "com"
+              ],
+              "path": [
+                "a55c9a68-e1ec-45a2-ad14-ee22e0eeccc1",
+                "oauth2",
+                "v2.0",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
 }
