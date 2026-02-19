@@ -52,7 +52,7 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://localhost:8080/api/v1/dispute/123",
+                  "raw": "http://localhost:8080/api/v1/dispute/001",
                   "protocol": "http",
                   "host": [
                     "localhost"
@@ -62,7 +62,7 @@
                     "api",
                     "v1",
                     "dispute",
-                    "123"
+                    "001"
                   ]
                 }
               },
@@ -81,14 +81,14 @@
                   "formdata": [
                     {
                       "key": "data",
-                      "value": "{\n  \"bp\": \"900017561\",\n  \"emails\": [\n    \"valid@example.com\",\n    \"fjcuenase@gmail.com\"\n  ]\n}",
+                      "value": "{\n  \"bp\": \"BP-10001\",\n  \"emails\": [\n    \"valid@example.com\",\n    \"fjcuenase@gmail.com\"\n  ]\n}",
                       "contentType": "application/json",
                       "type": "text"
                     },
                     {
                       "key": "file",
                       "type": "file",
-                      "src": "/C:/Users/dgp8/Downloads/Michellee/correct.xlsx"
+                      "src": "/C:/Users/dgp8/Downloads/correct.xlsx"
                     }
                   ]
                 },
@@ -189,7 +189,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\"bp\":\"900017562\"}",
+                  "raw": "{\"bp\":\"BP-10001\"}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -197,12 +197,12 @@
                   }
                 },
                 "url": {
-                  "raw": "http://localhost:8090/api/v1/bp-manager/check",
+                  "raw": "http://localhost:8080/api/v1/bp-manager/check",
                   "protocol": "http",
                   "host": [
                     "localhost"
                   ],
-                  "port": "8090",
+                  "port": "8080",
                   "path": [
                     "api",
                     "v1",
